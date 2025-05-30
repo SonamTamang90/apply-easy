@@ -18,7 +18,7 @@ interface Preferences {
   jobType: string;
   salaryRange: string;
   industries: string[];
-  profileImageUrl?: string;
+  profileImageUrl: string;
 }
 
 interface EditPreferencesModalProps {

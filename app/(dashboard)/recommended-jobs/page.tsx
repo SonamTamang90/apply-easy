@@ -3,6 +3,7 @@ import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { ProfileSummaryBar } from "@/components/ProfileSummaryBar";
 import { EditPreferencesModal } from "@/components/EditPreferencesModal";
+import { JobFiltersBar } from "@/components/JobFiltersBar";
 
 const initialPreferences = {
   role: "Frontend Developer",
@@ -14,11 +15,14 @@ const initialPreferences = {
   profileImageUrl: "https://randomuser.me/api/portraits/men/45.jpg",
 };
 
+type Preferences = typeof initialPreferences;
+
 const RecommendedJobs = () => {
   const [editOpen, setEditOpen] = React.useState(false);
-  const [preferences, setPreferences] = React.useState(initialPreferences);
+  const [preferences, setPreferences] =
+    React.useState<Preferences>(initialPreferences);
 
-  const handleSavePreferences = (newPrefs: typeof initialPreferences) => {
+  const handleSavePreferences = (newPrefs: Preferences) => {
     setPreferences({ ...preferences, ...newPrefs });
   };
 
@@ -30,6 +34,7 @@ const RecommendedJobs = () => {
       </p>
       <Separator className="my-4" />
       <ProfileSummaryBar {...preferences} onEdit={() => setEditOpen(true)} />
+      <JobFiltersBar />
       <EditPreferencesModal
         open={editOpen}
         onOpenChange={setEditOpen}
