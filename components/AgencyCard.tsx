@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
+import { Bookmark, BookmarkCheck } from "lucide-react";
+import Image from "next/image";
 
 export interface AgencyCardProps {
   logoUrl?: string;
@@ -20,14 +22,34 @@ export function AgencyCard({
   tags = [],
   onViewProfile,
 }: AgencyCardProps) {
+  const [saved, setSaved] = useState(false);
+
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start gap-4 p-5 border rounded-lg shadow-sm bg-background">
+    <div className="relative flex flex-col md:flex-row items-center md:items-start gap-4 p-5 pt-8 border rounded-lg shadow-sm bg-background">
+      {/* Bookmark Button - use shadcn Button and place outside main content */}
+      <div className="absolute top-3 right-3 z-10">
+        <Button
+          variant={saved ? "secondary" : "ghost"}
+          size="icon"
+          aria-label={saved ? "Remove Bookmark" : "Bookmark Agency"}
+          onClick={() => setSaved((s) => !s)}
+          className="rounded-full"
+        >
+          {saved ? (
+            <BookmarkCheck className="w-5 h-5 text-primary" />
+          ) : (
+            <Bookmark className="w-5 h-5 text-muted-foreground" />
+          )}
+        </Button>
+      </div>
       <div className="flex-shrink-0">
         {logoUrl ? (
-          <img
+          <Image
             src={logoUrl}
             alt={name}
-            className="w-16 h-16 rounded-full object-cover border"
+            width={64}
+            height={64}
+            className="rounded-full object-cover border"
           />
         ) : (
           <div className="w-16 h-16 rounded-full bg-muted flex items-center justify-center text-xl font-bold border">
@@ -59,7 +81,7 @@ export function AgencyCard({
           ))}
         </div>
       </div>
-      <div className="mt-3 md:mt-0 md:ml-4">
+      <div className="mt-3 md:mt-0 md:ml-4 pt-6">
         <Button variant="secondary" onClick={onViewProfile}>
           View Profile
         </Button>
