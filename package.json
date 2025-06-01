@@ -10,11 +10,13 @@
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",
+    "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-dropdown-menu": "^2.1.15",
     "@radix-ui/react-label": "^2.1.7",
     "@radix-ui/react-separator": "^1.1.7",
     "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-switch": "^1.2.5",
     "@radix-ui/react-toggle": "^1.1.9",
     "@radix-ui/react-tooltip": "^1.2.7",
     "@supabase/supabase-js": "^2.49.8",
@@ -29,6 +31,8 @@
     "react-hook-form": "^7.56.4",
     "react-icons": "^5.5.0",
     "react-media-recorder": "^1.7.1",
+    "recharts": "^2.15.3",
+    "sonner": "^2.0.4",
     "tailwind-merge": "^3.3.0",
     "zod": "^3.25.36"
   },
