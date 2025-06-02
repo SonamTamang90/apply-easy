@@ -2,7 +2,7 @@
 
 A modern, AI-powered job search platform that recommends jobs and agencies tailored to your profile—no more endless scrolling on Seek, Indeed, or LinkedIn. ApplyEasy delivers a clean, user-focused experience with advanced filtering, beautiful UI, and transparency in recommendations.
 
-![ApplyEasy Logo](public/assets/logo.png)
+![ApplyEasy Logo](public/assets/screen-shot.png)
 
 ---
 

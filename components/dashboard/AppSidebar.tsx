@@ -10,7 +10,7 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import {
-  Home,
+  Gauge,
   Settings,
   Sparkles,
   ClipboardList,
@@ -20,79 +20,80 @@ import {
   Bookmark,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import clsx from "clsx";
+
+const sidebarLinks = [
+  {
+    href: "/dashboard",
+    icon: <Gauge className="w-5 h-5 mr-2" />,
+    label: "Dashboard",
+  },
+  {
+    href: "/recommended-jobs",
+    icon: <Sparkles className="w-5 h-5 mr-2" />,
+    label: "Recommended Jobs",
+  },
+  {
+    href: "/applications",
+    icon: <ClipboardList className="w-5 h-5 mr-2" />,
+    label: "Applications",
+  },
+  {
+    href: "/agencies",
+    icon: <Users className="w-5 h-5 mr-2" />,
+    label: "Recruitment Agencies",
+  },
+  {
+    href: "/resume",
+    icon: <FileText className="w-5 h-5 mr-2" />,
+    label: "Resume & Cover Letter",
+  },
+  {
+    href: "/interview-prep",
+    icon: <Mic className="w-5 h-5 mr-2" />,
+    label: "Interview Prep",
+  },
+  {
+    href: "/saved-jobs",
+    icon: <Bookmark className="w-5 h-5 mr-2" />,
+    label: "Saved Jobs",
+  },
+  {
+    href: "/settings",
+    icon: <Settings className="w-5 h-5 mr-2" />,
+    label: "Settings",
+  },
+];
 
 export function AppSidebar() {
+  const pathname = usePathname();
   return (
     <Sidebar>
-      <SidebarContent>
+      <SidebarContent className="bg-white">
         <SidebarGroup>
-          <SidebarGroupLabel>Menu</SidebarGroupLabel>
+          <SidebarGroupLabel className="py-11 flex items-center gap-2 ">
+            <Image src="/assets/logo.svg" alt="Logo" width={32} height={32} />
+          </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/dashboard">
-                    <Home className="w-4 h-4 mr-2" />
-                    <span>Home</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/recommended-jobs">
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    <span>Recommended Jobs</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/applications">
-                    <ClipboardList className="w-4 h-4 mr-2" />
-                    <span>Applications</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/agencies">
-                    <Users className="w-4 h-4 mr-2" />
-                    <span>Recruitment Agencies</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/resume">
-                    <FileText className="w-4 h-4 mr-2" />
-                    <span>Resume & Cover Letter</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/interview-prep">
-                    <Mic className="w-4 h-4 mr-2" />
-                    <span>Interview Prep</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/saved-jobs">
-                    <Bookmark className="w-4 h-4 mr-2" />
-                    <span>Saved Jobs</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
-              <SidebarMenuItem>
-                <SidebarMenuButton asChild>
-                  <Link href="/settings">
-                    <Settings className="w-4 h-4 mr-2" />
-                    <span>Settings</span>
-                  </Link>
-                </SidebarMenuButton>
-              </SidebarMenuItem>
+              {sidebarLinks.map((item) => (
+                <SidebarMenuItem key={item.href}>
+                  <SidebarMenuButton
+                    asChild
+                    className={clsx(
+                      "px-3 h-10 transition-colors text-sm rounded-sm flex items-center text-gray-500 gap-2 hover:bg-gray-200/20",
+                      pathname == item.href && "bg-blue-600/10 text-blue-600"
+                    )}
+                  >
+                    <Link href={item.href}>
+                      {item.icon}
+                      <span className="">{item.label}</span>
+                    </Link>
+                  </SidebarMenuButton>
+                </SidebarMenuItem>
+              ))}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>

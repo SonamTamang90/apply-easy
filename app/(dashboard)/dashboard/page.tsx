@@ -224,7 +224,7 @@ const CustomTooltip = ({ active, payload, label }: TooltipProps<any, any>) => {
 
 const Dashboard = () => {
   return (
-    <div className="max-w-2xl mx-auto py-10 px-4">
+    <div className="max-w-7xl mx-auto py-10 px-4">
       <div className="flex items-center gap-4 bg-muted rounded-xl p-6 mb-8 shadow-sm hover:shadow-lg transition-shadow">
         <Avatar className="w-16 h-16">
           <AvatarImage src={mockUser.avatarUrl} alt={mockUser.name} />

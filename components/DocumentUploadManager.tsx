@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { AISuggestionsModal } from "@/components/AISuggestionsModal";
 import { AutoGenerateCoverLetterModal } from "@/components/AutoGenerateCoverLetterModal";
+import { motion } from "framer-motion";
 
 interface Document {
   id: string;
@@ -105,14 +106,48 @@ export function DocumentUploadManager() {
         onAccept={handleAIAccept}
       />
       <div className="flex justify-end mb-4">
-        <Button
-          variant="secondary"
-          onClick={() => setAutoGenOpen(true)}
-          className="flex items-center gap-2"
+        <motion.div
+          initial={{ background: "linear-gradient(90deg, #6EE7B7, #3B82F6)" }}
+          animate={{
+            background: [
+              "linear-gradient(90deg, #6EE7B7, #3B82F6)",
+              "linear-gradient(90deg, #A78BFA, #F472B6)",
+              "linear-gradient(90deg, #F472B6, #FBBF24)",
+              "linear-gradient(90deg, #6EE7B7, #3B82F6)",
+            ],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+          style={{ borderRadius: 8, padding: 2, display: "inline-block" }}
         >
-          <Sparkles className="w-4 h-4" />
-          Auto-Generate Cover Letter
-        </Button>
+          <Button
+            variant="secondary"
+            onClick={() => setAutoGenOpen(true)}
+            className="flex items-center gap-2 relative overflow-hidden bg-transparent text-white shadow-lg"
+            style={{
+              background: "transparent",
+              boxShadow: "0 2px 16px 0 rgba(59,130,246,0.15)",
+            }}
+          >
+            <span
+              className="absolute inset-0 z-0"
+              style={{
+                background: "inherit",
+                borderRadius: 6,
+                filter: "blur(2px)",
+                opacity: 0.7,
+              }}
+              aria-hidden="true"
+            ></span>
+            <span className="relative z-10 flex items-center gap-2">
+              <Sparkles className="w-4 h-4" />
+              Auto-Generate Cover Letter
+            </span>
+          </Button>
+        </motion.div>
       </div>
       {/* Drag & Drop Upload Area */}
       <div
