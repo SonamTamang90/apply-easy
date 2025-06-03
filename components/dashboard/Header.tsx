@@ -61,22 +61,18 @@ export default function Header() {
         <NotificationsSheet />
         <Sheet>
           <SheetTrigger asChild>
-            <button className="relative flex items-center justify-center w-10 h-10 rounded-full p-0 border-0 bg-gradient-to-tr from-blue-500 via-blue-400 to-blue-300 shadow hover:brightness-110 transition-all focus:outline-none">
-              <Avatar className="w-9 h-9 border-2 border-white">
-                <AvatarImage src={mockUser.avatarUrl} alt={mockUser.name} />
-                <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
-              </Avatar>
-            </button>
+            <Avatar className="w-11 h-11 border-2 border-white">
+              <AvatarImage src={mockUser.avatarUrl} alt={mockUser.name} />
+              <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
+            </Avatar>
           </SheetTrigger>
           <SheetContent side="right" className="w-[320px] sm:max-w-md">
             <SheetHeader className="pt-18 border-b border-dashed">
               <div className="flex flex-col items-center gap-2 mt-2 mb-4">
-                <div className="relative flex items-center justify-center w-24 h-24 bg-linear-to-r from-blue-500 via-blue-400 to-blue-300  rounded-full shadow">
-                  <Avatar className="w-22 h-22">
-                    <AvatarImage src={mockUser.avatarUrl} alt={mockUser.name} />
-                    <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
-                  </Avatar>
-                </div>
+                <Avatar className="w-22 h-22">
+                  <AvatarImage src={mockUser.avatarUrl} alt={mockUser.name} />
+                  <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
+                </Avatar>
                 <div className="font-semibold text-lg mt-2">
                   {mockUser.name}
                 </div>

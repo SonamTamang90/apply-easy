@@ -83,7 +83,7 @@ export function AppSidebar() {
                   <SidebarMenuButton
                     asChild
                     className={clsx(
-                      "px-3 h-10 transition-colors text-sm rounded-sm flex items-center text-gray-500 gap-2 hover:bg-gray-200/20",
+                      "px-3 h-10 transition-colors text-sm rounded-sm flex items-center text-gray-600 gap-2 hover:bg-gray-200/20",
                       pathname == item.href && "bg-blue-600/10 text-blue-600"
                     )}
                   >
