@@ -8,6 +8,7 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { DocumentUploadManager } from "@/components/DocumentUploadManager";
+import CoverLetterManager from "@/components/cover-letter/CoverLetterManager";
 
 const Resume = () => {
   return (
@@ -31,6 +32,7 @@ const Resume = () => {
         application.
       </p>
       <DocumentUploadManager />
+      <CoverLetterManager />
     </div>
   );
 };
