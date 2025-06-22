@@ -31,14 +31,16 @@ export default function HeroSection() {
         <div className="flex flex-col sm:flex-row gap-4 mb-8 justify-center">
           <Button
             size="lg"
-            className="px-8 py-6 text-lg font-semibold shadow-lg"
+            className="relative px-8 py-6 text-lg font-semibold bg-gradient-to-r from-[#338AFF] to-[#5A8FFF] hover:from-[#2A7AFF] hover:to-[#4A7FFF] text-white border-0 shadow-[0_8px_32px_rgba(51,138,255,0.3)] hover:shadow-[0_12px_40px_rgba(51,138,255,0.4)] transition-all duration-300 transform hover:scale-105 focus:scale-105 active:scale-95 rounded-xl overflow-hidden group"
           >
-            Get started
+            {/* Shine effect on hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700" />
+            <span className="relative z-10">Get started</span>
           </Button>
           <Button
             size="lg"
             variant="outline"
-            className="px-8 py-6 text-lg font-semibold"
+            className="px-8 py-6 text-lg font-semibold bg-transparent border-2 border-[#338AFF]/30 text-[#338AFF] hover:bg-[#338AFF]/10 hover:border-[#338AFF]/50 shadow-[0_4px_20px_rgba(51,138,255,0.1)] hover:shadow-[0_8px_30px_rgba(51,138,255,0.2)] transition-all duration-300 transform hover:scale-105 focus:scale-105 active:scale-95 rounded-xl backdrop-blur-sm"
           >
             Learn more
           </Button>
