@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import { AuthService } from "@/lib/auth";
 import { SidebarProvider } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/dashboard/AppSidebar";
 import Header from "@/components/dashboard/Header";
@@ -16,27 +16,17 @@ export default function DashboardLayout({ children }: DashboardLayoutProps) {
   const [authenticated, setAuthenticated] = useState(false);
 
   useEffect(() => {
-    const getSession = async () => {
-      const { data } = await supabase.auth.getSession();
-      if (!data.session) {
+    const checkAuth = () => {
+      const isAuth = AuthService.isAuthenticated();
+      if (!isAuth) {
         router.replace("/sign-in");
       } else {
         setAuthenticated(true);
       }
       setLoading(false);
     };
-    getSession();
-    // Listen for auth changes
-    const { data: listener } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        if (!session) {
-          router.replace("/sign-in");
-        }
-      }
-    );
-    return () => {
-      listener.subscription.unsubscribe();
-    };
+
+    checkAuth();
   }, [router]);
 
   if (loading) return null;

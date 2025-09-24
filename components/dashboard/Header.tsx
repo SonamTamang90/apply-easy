@@ -11,8 +11,8 @@ import {
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import { Sun, Moon, User, Bookmark, ClipboardList } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
 import { useTheme } from "next-themes";
+import { useAuth } from "@/components/AuthProvider";
 import SearchBar from "@/components/dashboard/SearchBar";
 import { Switch } from "@/components/ui/switch";
 import Image from "next/image";
@@ -27,13 +27,14 @@ const mockUser = {
 
 export default function Header() {
   const router = useRouter();
+  const { signOut, user } = useAuth();
   const [loading, setLoading] = React.useState(false);
   const { setTheme, theme } = useTheme();
   const [search, setSearch] = React.useState("");
 
   const handleSignOut = async () => {
     setLoading(true);
-    await supabase.auth.signOut();
+    await signOut();
     router.replace("/sign-in");
     setLoading(false);
   };
@@ -62,22 +63,22 @@ export default function Header() {
         <Sheet>
           <SheetTrigger asChild>
             <Avatar className="w-11 h-11 border-2 border-white">
-              <AvatarImage src={mockUser.avatarUrl} alt={mockUser.name} />
-              <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
+              <AvatarImage src={mockUser.avatarUrl} alt={user?.name || mockUser.name} />
+              <AvatarFallback>{(user?.name || mockUser.name).charAt(0)}</AvatarFallback>
             </Avatar>
           </SheetTrigger>
           <SheetContent side="right" className="w-[320px] sm:max-w-md">
             <SheetHeader className="pt-18 border-b border-dashed">
               <div className="flex flex-col items-center gap-2 mt-2 mb-4">
                 <Avatar className="w-22 h-22">
-                  <AvatarImage src={mockUser.avatarUrl} alt={mockUser.name} />
-                  <AvatarFallback>{mockUser.name.charAt(0)}</AvatarFallback>
+                  <AvatarImage src={mockUser.avatarUrl} alt={user?.name || mockUser.name} />
+                  <AvatarFallback>{(user?.name || mockUser.name).charAt(0)}</AvatarFallback>
                 </Avatar>
                 <div className="font-semibold text-lg mt-2">
-                  {mockUser.name}
+                  {user?.name || mockUser.name}
                 </div>
                 <div className="text-sm text-muted-foreground">
-                  {mockUser.email}
+                  {user?.email || mockUser.email}
                 </div>
               </div>
               <SheetTitle className="sr-only">Account</SheetTitle>

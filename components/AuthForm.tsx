@@ -7,7 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { supabase } from "@/lib/supabase";
+import { AuthService } from "@/lib/auth";
 import {
   Form,
   FormField,
@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/form";
 import Link from "next/link";
 import { signInSchema, registerSchema } from "@/lib/validations";
+import { useAuth } from "@/components/AuthProvider";
 
 interface AuthFormProps {
   mode: "sign-in" | "register";
@@ -30,6 +31,7 @@ type FormValues = SignInValues | RegisterValues;
 
 const AuthForm: React.FC<AuthFormProps> = ({ mode }) => {
   const router = useRouter();
+  const { refreshAuth } = useAuth();
   const [supabaseError, setSupabaseError] = React.useState<string | null>(null);
   const [loading, setLoading] = React.useState(false);
 
@@ -46,20 +48,26 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode }) => {
     setLoading(true);
     try {
       if (mode === "sign-in") {
-        const { error } = await supabase.auth.signInWithPassword({
-          email: values.email,
-          password: values.password,
-        });
-        if (error) setSupabaseError(error.message);
-        else router.push("/dashboard");
+        const result = await AuthService.signInWithPassword(values.email, values.password);
+        if ("error" in result) {
+          setSupabaseError(result.error);
+        } else {
+          refreshAuth();
+          router.push("/dashboard");
+        }
       } else {
-        const { error } = await supabase.auth.signUp({
-          email: (values as RegisterValues).email,
-          password: (values as RegisterValues).password,
-          options: { data: { name: (values as RegisterValues).name } },
-        });
-        if (error) setSupabaseError(error.message);
-        else router.push("/dashboard");
+        const registerValues = values as RegisterValues;
+        const result = await AuthService.signUp(
+          registerValues.email,
+          registerValues.password,
+          registerValues.name
+        );
+        if ("error" in result) {
+          setSupabaseError(result.error);
+        } else {
+          refreshAuth();
+          router.push("/dashboard");
+        }
       }
     } catch (err: unknown) {
       if (err instanceof Error) setSupabaseError(err.message);
@@ -69,22 +77,9 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode }) => {
     }
   };
 
-  const handleSocial = async (provider: "google" | "github") => {
-    setSupabaseError(null);
-    setLoading(true);
-    try {
-      const { error } = await supabase.auth.signInWithOAuth({
-        provider,
-        options: { redirectTo: `${window.location.origin}/dashboard` },
-      });
-      if (error) setSupabaseError(error.message);
-      // Supabase will redirect on success
-    } catch (err: unknown) {
-      if (err instanceof Error) setSupabaseError(err.message);
-      else setSupabaseError("Something went wrong");
-    } finally {
-      setLoading(false);
-    }
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const handleSocial = async (_provider: "google" | "github") => {
+    setSupabaseError("Social login is not available in demo mode. Please use: demo@example.com / demo123");
   };
 
   return (
@@ -134,6 +129,15 @@ const AuthForm: React.FC<AuthFormProps> = ({ mode }) => {
         </div>
         {supabaseError && (
           <p className="text-red-500 text-sm text-center">{supabaseError}</p>
+        )}
+        {mode === "sign-in" && (
+          <div className="bg-blue-50 border border-blue-200 rounded-md p-3 mb-4">
+            <p className="text-sm text-blue-800 text-center">
+              <strong>Demo Credentials:</strong><br />
+              Email: demo@example.com<br />
+              Password: demo123
+            </p>
+          </div>
         )}
         {mode === "register" && (
           <FormField
