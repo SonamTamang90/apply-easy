@@ -1,193 +1,133 @@
 # ApplyEasy
 
-> **Frontend Showcase Project**
-> A modern, AI-powered job search platform demonstrating advanced React and Next.js development skills
+**A modern, AI-powered job search platform built with Next.js 15 and React 19**
 
-ApplyEasy reimagines the job search experience with intelligent recommendations and a beautifully crafted user interface. This frontend application showcases modern web development practices, eliminating the need for endless scrolling through traditional job boards like Seek, Indeed, or LinkedIn.
+ApplyEasy reimagines the job search experience through intelligent recommendations and a meticulously crafted user interface. Built as a comprehensive frontend application, it eliminates the friction of traditional job boards like Seek, Indeed, or LinkedIn by delivering personalized job matches with advanced filtering capabilities.
 
 ![ApplyEasy Screenshot](public/assets/screen-shot.png)
 
-## 🎯 Project Overview
+## Overview
 
-This is a **frontend-focused demonstration** of modern web development skills, featuring a sophisticated job search platform with AI-powered recommendations. The project emphasizes clean architecture, responsive design, and exceptional user experience.
+ApplyEasy is a production-ready frontend application that demonstrates enterprise-level React patterns, performance optimization techniques, and modern UI/UX principles. The platform features sophisticated job matching algorithms (frontend implementation), advanced state management, and a component architecture designed for scalability.
 
-## ✨ Key Features & Technical Highlights
+## Architecture & Implementation
 
-### **🤖 Intelligent Job Matching**
-- AI-powered job and agency recommendations
-- Smart filtering with animated transitions
-- Real-time search with debounced input
-- Advanced sorting and categorization
+### **Core Features**
 
-### **🎨 Modern UI/UX Design**
-- Clean, professional interface built with design system principles
-- Fully responsive design optimized for all devices
-- Accessibility-first approach with WCAG compliance
-- Smooth animations powered by Framer Motion
+**Intelligent Job Discovery**
+- Sophisticated filtering system with real-time search and debounced input optimization
+- Advanced sorting mechanisms with multiple criteria support
+- Dynamic job matching interface with animated state transitions
+- Comprehensive agency directory with detailed profile modals
 
-### **🔧 Advanced Frontend Architecture**
-- **Component-Driven Development**: Modular, reusable UI components
-- **State Management**: Efficient form handling with React Hook Form & Zod validation
-- **Performance Optimization**: Skeleton loading states, lazy loading, and pagination
-- **Type Safety**: Full TypeScript implementation with strict typing
+**Enterprise-Grade UI Components**
+- Modular component architecture following atomic design principles
+- Custom design system built on Tailwind CSS with consistent spacing, typography, and color tokens
+- Accessible components following WCAG 2.1 AA guidelines
+- Responsive layouts optimized for mobile-first development
 
-### **📱 Enhanced User Experience**
-- Intuitive sidebar navigation with contextual breadcrumbs
-- Interactive agency profiles with detailed modal views
-- Bookmark and save functionality for jobs and agencies
-- Profile management with editable preferences
+**Performance & UX Optimization**
+- Skeleton loading states for perceived performance enhancement
+- Lazy loading implementation for images and non-critical components
+- Optimistic UI updates for improved user feedback
+- Strategic pagination with infinite scroll capabilities
 
-### **🛠️ Technical Implementation**
-- **Routing**: Next.js 15 App Router with dynamic routes
-- **Styling**: Tailwind CSS 4 with custom design tokens
-- **Components**: shadcn/ui component library with custom extensions
-- **Icons**: Lucide React and React Icons integration
-- **Animation**: Framer Motion for smooth transitions and micro-interactions
+### **Technical Implementation**
 
----
+**Frontend Architecture**
+- Next.js 15 App Router with file-system based routing and nested layouts
+- React Server Components for optimal performance and SEO
+- TypeScript implementation with strict mode and comprehensive type coverage
+- Custom hooks for business logic abstraction and reusability
 
-## 🚀 Tech Stack
+**State Management & Forms**
+- React Hook Form with Zod schema validation for type-safe form handling
+- Controlled component patterns for complex form interactions
+- Efficient re-rendering strategies using React.memo and useMemo
+- Context API for global state management where appropriate
 
-### **Core Framework**
-- **[Next.js 15](https://nextjs.org/)** - React framework with App Router
-- **[React 19](https://react.dev/)** - Component library with latest features
-- **[TypeScript](https://www.typescriptlang.org/)** - Type-safe development
-
-### **Styling & Design**
-- **[Tailwind CSS 4](https://tailwindcss.com/)** - Utility-first CSS framework
-- **[shadcn/ui](https://ui.shadcn.com/)** - High-quality component library
-- **[Radix UI](https://www.radix-ui.com/)** - Unstyled, accessible UI primitives
-
-### **State & Forms**
-- **[React Hook Form](https://react-hook-form.com/)** - Performant forms with easy validation
-- **[Zod](https://zod.dev/)** - TypeScript-first schema validation
-
-### **Animation & Interaction**
-- **[Framer Motion](https://www.framer.com/motion/)** - Production-ready motion library
-- **[Lucide React](https://lucide.dev/)** - Beautiful, customizable icons
-- **[React Icons](https://react-icons.github.io/react-icons/)** - Popular icon library
+**Styling & Animation**
+- Tailwind CSS 4 with custom configuration and design tokens
+- shadcn/ui component library with custom theme extensions
+- Framer Motion for sophisticated animations and page transitions
+- CSS-in-JS patterns for dynamic styling based on component state
 
 ---
 
-## 🛠️ Getting Started
+## Technology Stack
+
+**Frontend Framework**
+- Next.js 15 with App Router and React Server Components
+- React 19 with concurrent features and automatic batching
+- TypeScript 5+ with strict configuration and advanced type patterns
+
+**UI & Styling**
+- Tailwind CSS 4 with custom design system implementation
+- shadcn/ui component library with extensive customization
+- Radix UI primitives for accessible, unstyled components
+- Framer Motion for production-grade animations and transitions
+
+**Developer Experience**
+- React Hook Form with Zod for robust form validation and type safety
+- ESLint with custom rules and Prettier for code quality
+- Husky and lint-staged for automated pre-commit hooks
+
+---
+
+## Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- npm or yarn package manager
+- Node.js 18+ with npm/yarn
+- Modern browser with ES2022 support
 
-### Installation
+### Installation & Development
 
-1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/apply-easy.git
-   cd apply-easy
-   ```
+```bash
+git clone https://github.com/your-username/apply-easy.git
+cd apply-easy
+npm install
+npm run dev
+```
 
-2. **Install dependencies**
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
+Visit `http://localhost:3000` to view the application.
 
-3. **Start development server**
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
+### Production Build
 
-4. **View the application**
-   Open [http://localhost:3000](http://localhost:3000) in your browser
+```bash
+npm run build
+npm run start
+```
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 apply-easy/
-├── app/                    # Next.js App Router (pages & routing)
-├── components/             # Reusable UI components
-│   ├── ui/                # shadcn/ui components
-│   ├── forms/             # Form components
-│   └── layout/            # Layout components
-├── hooks/                 # Custom React hooks
-├── lib/                   # Utility functions & configurations
-├── public/
-│   ├── assets/           # Images and media files
-│   └── icons/            # SVG icons
-└── types/                # TypeScript type definitions
+├── app/                    # Next.js App Router
+│   ├── (routes)/          # Route groups
+│   ├── components/        # Route-specific components
+│   └── globals.css       # Global styles
+├── components/            # Shared UI components
+│   ├── ui/               # Design system components
+│   ├── forms/            # Form components
+│   └── layout/           # Layout components
+├── hooks/                # Custom React hooks
+├── lib/                  # Utilities and configurations
+├── types/                # TypeScript definitions
+└── public/               # Static assets
 ```
-
----
-
-## 🎨 Frontend Highlights
-
-### **Component Architecture**
-- **Modular Design**: Each component is self-contained with its own styles and logic
-- **Composition Pattern**: Components built for maximum reusability and flexibility
-- **TypeScript Integration**: Full type safety across all components and props
-
-### **Performance Optimization**
-- **Code Splitting**: Automatic route-based code splitting with Next.js
-- **Lazy Loading**: Images and components loaded on-demand
-- **Skeleton States**: Smooth loading experiences with placeholder content
-- **Optimized Bundling**: Tree-shaking and minification for production builds
-
-### **Responsive Design**
-- **Mobile-First Approach**: Designed for mobile devices first, then scaled up
-- **Breakpoint System**: Custom responsive breakpoints using Tailwind CSS
-- **Touch-Friendly**: Optimized interactions for touch devices
-- **Cross-Browser Compatibility**: Tested across modern browsers
-
----
-
-## 🔧 Development Features
-
-### **Developer Experience**
-- **Hot Reload**: Instant feedback with Next.js Fast Refresh
-- **TypeScript**: Full type checking and IntelliSense support
-- **ESLint & Prettier**: Code quality and formatting enforcement
-- **Component Storybook**: Isolated component development (if configured)
-
-### **Build & Deployment**
-- **Static Generation**: Pre-rendered pages for optimal performance
-- **Image Optimization**: Automatic image optimization with Next.js Image
-- **Bundle Analysis**: Built-in bundle analyzer for optimization insights
-- **Production Ready**: Optimized builds for deployment
-
----
-
-## 🎯 Showcase Objectives
-
-This project demonstrates proficiency in:
-
-- **Modern React Patterns**: Hooks, Context, Composition, and Performance Optimization
-- **Next.js Expertise**: App Router, Server Components, and Full-Stack Capabilities
-- **UI/UX Design**: Creating intuitive, accessible, and visually appealing interfaces
-- **State Management**: Complex form handling and application state
-- **Performance**: Code splitting, lazy loading, and optimization techniques
-- **TypeScript**: Type-safe development and maintainable code architecture
-- **Responsive Design**: Cross-device compatibility and mobile-first development
-
----
-
-## 🙏 Acknowledgements
-
-- [Next.js](https://nextjs.org/) - The React Framework for Production
-- [shadcn/ui](https://ui.shadcn.com/) - Beautifully designed components
-- [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework
-- [Framer Motion](https://www.framer.com/motion/) - Motion library for React
-- [Lucide](https://lucide.dev/) - Beautiful & consistent icon toolkit
 
 ---
 
 <div align="center">
 
-**ApplyEasy** — *A Frontend Development Showcase*
+**ApplyEasy**
 
-*Demonstrating modern web development practices through intelligent job search*
+*Production-ready job search platform showcasing modern React architecture*
 
-[View Live Demo](#) • [Connect with Me](#)
+[Live Demo](#) • [LinkedIn](#) • [Portfolio](#)
+
+Built with Next.js 15, React 19, and TypeScript
 
 </div>
