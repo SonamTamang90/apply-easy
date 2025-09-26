@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Spectral } from "next/font/google";
+import { Inter, Lora } from "next/font/google";
 import "../styles/globals.css";
 import { ThemeProvider } from "next-themes";
 import React from "react";
@@ -11,10 +11,10 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-const spectral = Spectral({
-  variable: "--font-spectral",
+const lora = Lora({
+  variable: "--font-lora",
   subsets: ["latin"],
-  weight: ["200", "300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -30,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${inter.variable} ${spectral.variable} antialiased`}>
+      <body className={`${inter.variable} ${lora.variable} antialiased`}>
         <AuthProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}

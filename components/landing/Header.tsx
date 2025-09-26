@@ -1,46 +1,60 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Container from "../layout/Container";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 z-30 w-full bg-background/80 backdrop-blur border-b border-muted shadow-sm">
-      <nav className="max-w-6xl mx-auto flex items-center justify-between px-4 py-3">
+    <Container className="mt-6">
+      <header className="bg-white border border-gray-200 rounded-lg flex items-center justify-between py-4 px-6">
         <div className="flex items-center gap-2">
-          <Image
-            src="/assets/logo.svg"
-            alt="ApplyEasy Logo"
-            width={36}
-            height={36}
-          />
+          <Image src="/logo.svg" alt="ApplyEasy Logo" width={32} height={32} />
           <span className="font-bold text-xl tracking-tight">ApplyEasy</span>
         </div>
-        <div className="hidden md:flex items-center gap-6">
+
+        <div className="hidden md:flex items-center gap-8">
+          <Link
+            href="#home"
+            className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
+          >
+            HOME
+          </Link>
           <Link
             href="#features"
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
           >
-            Features
+            FEATURES
           </Link>
           <Link
             href="#how-it-works"
-            className="text-muted-foreground hover:text-primary transition-colors"
+            className="text-sm font-medium text-gray-700 hover:text-primary transition-colors"
           >
-            How it Works
+            HOW IT WORKS
           </Link>
-          <Link
-            href="#testimonials"
-            className="text-muted-foreground hover:text-primary transition-colors"
-          >
-            Testimonials
-          </Link>
-          <Link href="/sign-in">
-            <Button variant="outline" size="sm">
-              Sign In
-            </Button>
-          </Link>
+          <div className="relative group">
+            <button className="text-sm font-medium text-gray-700 hover:text-primary transition-colors flex items-center gap-1">
+              PRICING
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+          </div>
         </div>
-      </nav>
-    </header>
+
+        <Button variant="brand" size="lg" className="hidden md:block">
+          GET STARTED
+        </Button>
+      </header>
+    </Container>
   );
 }

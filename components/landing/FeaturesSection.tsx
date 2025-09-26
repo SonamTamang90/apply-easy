@@ -1,53 +1,66 @@
-import { Card } from "@/components/ui/card";
-import { Sparkles, FileText, Briefcase, User } from "lucide-react";
+import Container from "../layout/Container";
 
 const features = [
   {
-    icon: <Sparkles className="w-8 h-8 text-primary" />,
-    title: "AI-Powered Resume Optimization",
+    image: "sample.png",
+    title: "Simple Task Management",
     description:
-      "Get instant suggestions to improve your resume and stand out to employers.",
+      "Effortlessly create, organize, and prioritize tasks with an intuitive interface.",
   },
   {
-    icon: <FileText className="w-8 h-8 text-primary" />,
-    title: "One-Click Cover Letters",
+    image: "sample.png",
+    title: "Smart Scheduling",
     description:
-      "Auto-generate tailored cover letters for every job application.",
+      "Set due dates, recurring tasks, and get automated reminders to stay on track.",
   },
   {
-    icon: <Briefcase className="w-8 h-8 text-primary" />,
-    title: "Application Tracker",
+    image: "sample.png",
+    title: "Team Collaboration",
     description:
-      "Keep track of all your job applications in one organized dashboard.",
+      "Work together seamlessly with shared projects and real-time updates.",
   },
   {
-    icon: <User className="w-8 h-8 text-primary" />,
-    title: "Interview Prep",
+    image: "sample.png",
+    title: "Progress Analytics",
     description:
-      "Practice with AI-driven mock interviews and get actionable feedback.",
+      "Track your productivity with detailed insights and performance metrics.",
   },
 ];
 
 export default function FeaturesSection() {
   return (
     <section className="w-full py-16 bg-background">
-      <div className="max-w-5xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10">Features</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <Container>
+        <div className="text-center mb-16">
+          <h2 className="max-w-xl text-3xl md:text-[48px] font-medium mb-6 font-heading mx-auto">
+            Powerful features to accelerate your career
+          </h2>
+          <p className="text-base text-gray-700 max-w-lg mx-auto">
+            Advanced AI technology that transforms how you discover
+            opportunities, craft applications, and secure your ideal job faster.
+          </p>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
           {features.map((feature, idx) => (
-            <Card
-              key={idx}
-              className="flex flex-col items-center p-6 text-center shadow-md h-full"
-            >
-              <div className="mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-              <p className="text-muted-foreground text-sm">
-                {feature.description}
-              </p>
-            </Card>
+            <div key={idx} className="bg-[#edf0f2] rounded-3xl overflow-hidden">
+              <div className="p-6 flex justify-center">
+                <div className="w-3/4 h-64 bg-gray-200 rounded-2xl flex items-center justify-center">
+                  <span className="text-gray-500 text-sm">Image Placeholder</span>
+                </div>
+              </div>
+
+              <div className="p-6 text-center">
+                {/* <h3 className="text-3xl font-heading font-bold text-gray-900 mb-3">
+                  {feature.title}
+                </h3> */}
+                <p className="text-gray-400 text-2xl font-semibold max-w-sm mx-auto">
+                  {feature.description}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
-      </div>
+      </Container>
     </section>
   );
 }

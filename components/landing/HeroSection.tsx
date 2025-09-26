@@ -38,7 +38,7 @@ function AvatarGroup() {
           </AvatarFallback>
         </Avatar>
       </div>
-      <div className="text-lg text-muted-foreground">
+      <div className="text-base text-muted-foreground">
         <span className="font-medium">100+ job seekers</span> already landed
         their dream jobs
       </div>
@@ -48,7 +48,7 @@ function AvatarGroup() {
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-h-full bg-[#F5F5F5] flex items-center py-20">
+    <section className="w-full min-h-full flex items-center py-14">
       <Container className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-14">
           <div className="">

@@ -1,50 +1,123 @@
-import { Card } from "@/components/ui/card";
-import { Upload, Sparkles, CheckCircle2 } from "lucide-react";
+"use client";
+import { Upload, Sparkles, CheckCircle2, Send } from "lucide-react";
+import Container from "../layout/Container";
+import Image from "next/image";
 
 const steps = [
   {
     icon: <Upload className="w-8 h-8 text-primary" />,
     title: "Upload Resume",
-    description: "Easily upload your resume and cover letters to get started.",
+    description:
+      "Easily upload your resume and cover letters to get started with our secure platform.",
   },
   {
     icon: <Sparkles className="w-8 h-8 text-primary" />,
     title: "Get AI Suggestions",
     description:
-      "Receive instant, actionable feedback to improve your documents.",
+      "Receive instant, personalized feedback and optimization tips to make your documents stand out.",
+  },
+  {
+    icon: <Send className="w-8 h-8 text-primary" />,
+    title: "Apply to Jobs",
+    description:
+      "Use your optimized documents to apply to relevant job opportunities with one click.",
   },
   {
     icon: <CheckCircle2 className="w-8 h-8 text-primary" />,
-    title: "Apply & Track",
-    description: "Apply to jobs and track your progress in one dashboard.",
+    title: "Track & Manage",
+    description:
+      "Monitor application status, schedule interviews, and manage your entire job search in one place.",
   },
 ];
 
 export default function HowItWorksSection() {
+  const leftSteps = steps.slice(0, 2);
+  const rightSteps = steps.slice(2, 4);
+
   return (
-    <section className="w-full py-16 bg-muted">
-      <div className="max-w-4xl mx-auto px-4">
-        <h2 className="text-3xl font-bold text-center mb-10">How It Works</h2>
-        <div className="flex flex-col md:flex-row gap-6 justify-center items-center">
-          {steps.map((step, idx) => (
-            <Card
-              key={idx}
-              className="flex flex-col items-center p-6 text-center shadow h-full w-full md:w-1/3"
-            >
-              <div className="mb-4">{step.icon}</div>
-              <div className="flex items-center justify-center mb-2">
-                <span className="w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center font-bold mr-2">
-                  {idx + 1}
-                </span>
-                <h3 className="text-xl font-semibold">{step.title}</h3>
-              </div>
-              <p className="text-muted-foreground text-sm">
-                {step.description}
-              </p>
-            </Card>
-          ))}
+    <section className="w-full py-16 bg-[#F5F5F5]">
+      <Container>
+        <div className="text-center mb-16">
+          <h2 className="max-w-xl text-3xl md:text-[48px] font-medium mb-6 font-heading mx-auto">
+            How It Works
+          </h2>
+          <p className="text-base text-gray-700 max-w-lg mx-auto">
+            Transform your job search with our simple four-step process that
+            gets you noticed by employers.
+          </p>
         </div>
-      </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
+          {/* Left side - First 2 steps */}
+          <div className="flex flex-col h-[400px]">
+            {leftSteps.map((step, idx) => (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <span className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-lg">
+                      {idx + 1}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-3">
+                      {/* <div className="text-primary">{step.icon}</div> */}
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Center - Image */}
+          <div className="flex justify-center">
+            <Image
+              src="/image-2.png"
+              alt="How it works illustration"
+              width={400}
+              height={400}
+              className="rounded-2xl shadow-lg"
+            />
+          </div>
+
+          {/* Right side - Last 2 steps */}
+          <div className="flex flex-col h-[400px]">
+            {rightSteps.map((step, idx) => (
+              <div
+                key={idx + 2}
+                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
+              >
+                <div className="flex items-start space-x-4">
+                  <div className="flex-shrink-0">
+                    <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">
+                      {idx + 3}
+                    </span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="flex items-center space-x-3 mb-3">
+                      <div className="text-primary">{step.icon}</div>
+                      <h3 className="text-xl font-semibold text-gray-900">
+                        {step.title}
+                      </h3>
+                    </div>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      {step.description}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </Container>
     </section>
   );
 }
