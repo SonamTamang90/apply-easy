@@ -49,7 +49,7 @@ export default function HowItWorksSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
           {/* Left side - First 2 steps */}
-          <div className="flex flex-col h-[400px]">
+          <div className="flex flex-col gap-6 h-[400px]">
             {leftSteps.map((step, idx) => (
               <div
                 key={idx}
