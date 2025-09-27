@@ -49,26 +49,23 @@ export default function HowItWorksSection() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
           {/* Left side - First 2 steps */}
-          <div className="flex flex-col gap-6 h-[400px]">
+          <div className="flex flex-col gap-6">
             {leftSteps.map((step, idx) => (
               <div
                 key={idx}
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <span className="w-10 h-10 rounded-xl bg-primary text-white flex items-center justify-center font-bold text-lg">
-                      {idx + 1}
-                    </span>
+                <div className="flex flex-col space-y-11 items-start space-x-4">
+                  <div className="flex-shrink-0 flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-lg bg-gray-900 text-sm text-white flex items-center justify-center gap-2 font-bold uppercase font-heading">
+                      <span className="text-lg">{idx + 1}</span>
+                    </div>
+                    <h3 className="font-heading font-semibold text-xl">
+                      {step.title}
+                    </h3>
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-3">
-                      {/* <div className="text-primary">{step.icon}</div> */}
-                      <h3 className="text-xl font-semibold text-gray-900">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-base leading-relaxed">
                       {step.description}
                     </p>
                   </div>
@@ -89,26 +86,23 @@ export default function HowItWorksSection() {
           </div>
 
           {/* Right side - Last 2 steps */}
-          <div className="flex flex-col h-[400px]">
+          <div className="flex flex-col gap-6">
             {rightSteps.map((step, idx) => (
               <div
                 key={idx + 2}
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
               >
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                    <span className="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold text-lg">
-                      {idx + 3}
-                    </span>
+                <div className="flex flex-col space-y-11 items-start space-x-4">
+                  <div className="flex-shrink-0 flex items-center gap-4">
+                    <div className="h-10 w-10 rounded-lg bg-gray-900 text-sm text-white flex items-center justify-center gap-2 font-bold uppercase font-heading">
+                      <span className="text-lg">{idx + 3}</span>
+                    </div>
+                    <h3 className="font-heading font-semibold text-xl">
+                      {step.title}
+                    </h3>
                   </div>
                   <div className="flex-1">
-                    <div className="flex items-center space-x-3 mb-3">
-                      <div className="text-primary">{step.icon}</div>
-                      <h3 className="text-xl font-semibold text-gray-900">
-                        {step.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-600 text-sm leading-relaxed">
+                    <p className="text-gray-600 text-base leading-relaxed">
                       {step.description}
                     </p>
                   </div>
