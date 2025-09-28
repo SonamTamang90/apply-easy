@@ -55,7 +55,7 @@ export default function HowItWorksSection() {
                 key={idx}
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
               >
-                <div className="flex flex-col space-y-11 items-start space-x-4">
+                <div className="flex flex-col space-y-9 items-start space-x-4">
                   <div className="flex-shrink-0 flex items-center gap-4">
                     <div className="h-10 w-10 rounded-lg bg-gray-900 text-sm text-white flex items-center justify-center gap-2 font-bold uppercase font-heading">
                       <span className="text-lg">{idx + 1}</span>
@@ -92,7 +92,7 @@ export default function HowItWorksSection() {
                 key={idx + 2}
                 className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
               >
-                <div className="flex flex-col space-y-11 items-start space-x-4">
+                <div className="flex flex-col space-y-9 items-start space-x-4">
                   <div className="flex-shrink-0 flex items-center gap-4">
                     <div className="h-10 w-10 rounded-lg bg-gray-900 text-sm text-white flex items-center justify-center gap-2 font-bold uppercase font-heading">
                       <span className="text-lg">{idx + 3}</span>

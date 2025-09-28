@@ -1,29 +1,30 @@
 import Container from "../layout/Container";
+import Image from "next/image";
 
 const features = [
   {
-    image: "sample.png",
+    image: "/feature-1.png",
     title: "Simple Task Management",
     description:
-      "Effortlessly create, organize, and prioritize tasks with an intuitive interface.",
+      "Effortlessly discover, save, and organize job opportunities with an intuitive interface.",
   },
   {
-    image: "sample.png",
+    image: "/feature-1.svg",
     title: "Smart Scheduling",
     description:
-      "Set due dates, recurring tasks, and get automated reminders to stay on track.",
+      "Set application deadlines, follow-up reminders, and automated interview scheduling.",
   },
   {
-    image: "sample.png",
+    image: "/feature-1.svg",
     title: "Team Collaboration",
     description:
-      "Work together seamlessly with shared projects and real-time updates.",
+      "Generate tailored resumes and cover letters with AI-powered application assistance.",
   },
   {
-    image: "sample.png",
+    image: "/feature-1.svg",
     title: "Progress Analytics",
     description:
-      "Track your productivity with detailed insights and performance metrics.",
+      "Track your application progress with detailed insights and response analytics.",
   },
 ];
 
@@ -40,19 +41,23 @@ export default function FeaturesSection() {
             opportunities, craft applications, and secure your ideal job faster.
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-7xl mx-auto">
           {features.map((feature, idx) => (
-            <div key={idx} className="bg-[#edf0f2] rounded-3xl overflow-hidden">
-              <div className="p-6 flex justify-center">
-                <div className="w-3/4 h-64 bg-gray-200 rounded-2xl flex items-center justify-center">
-                  <span className="text-gray-500 text-sm">Image Placeholder</span>
+            <div key={idx} className="bg-[#edf0f2] rounded-3xl overflow-hidden flex flex-col items-center justify-center p-8">
+              <div className="flex justify-center mb-8 relative">
+                <div className="w-96 h-96 flex items-center justify-center relative">
+                  <Image
+                    src={feature.image}
+                    alt={feature.title}
+                    width={384}
+                    height={384}
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#edf0f2] to-transparent pointer-events-none"></div>
                 </div>
               </div>
 
-              <div className="p-6 text-center">
-                {/* <h3 className="text-3xl font-heading font-bold text-gray-900 mb-3">
-                  {feature.title}
-                </h3> */}
+              <div className="text-center">
                 <p className="text-gray-400 text-2xl font-semibold max-w-sm mx-auto">
                   {feature.description}
                 </p>

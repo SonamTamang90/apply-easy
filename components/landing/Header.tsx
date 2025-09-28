@@ -52,7 +52,7 @@ export default function Header() {
         </div>
 
         <Button variant="brand" size="lg" className="hidden md:block">
-          GET STARTED
+          <Link href="/register">GET STARTED</Link>
         </Button>
       </header>
     </Container>

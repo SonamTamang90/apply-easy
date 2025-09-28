@@ -52,7 +52,7 @@ export default function HeroSection() {
       <Container className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-14">
           <div className="">
-            <h1 className="text-5xl sm:text-7xl font-heading font-semibold text-black mb-6">
+            <h1 className="text-5xl sm:text-7xl font-heading font-bold text-black mb-6">
               Get Hired Faster, Smarter
             </h1>
             <p className="text-lg text-muted-foreground max-w-xl">

@@ -25,7 +25,8 @@ const faqs = [
       "Yes! ApplyEasy provides a comprehensive dashboard where you can track all your applications in real-time. Monitor application status, set follow-up reminders, schedule interviews, and manage your entire job search pipeline from one centralized location.",
   },
   {
-    question: "What types of job positions and industries does ApplyEasy support?",
+    question:
+      "What types of job positions and industries does ApplyEasy support?",
     answer:
       "ApplyEasy works across all industries and job levels, from entry-level positions to executive roles. Whether you're in tech, healthcare, finance, marketing, or any other field, our AI adapts to industry-specific requirements and helps optimize your applications accordingly.",
   },
@@ -45,26 +46,20 @@ const FAQSection = () => {
   return (
     <section className="w-full py-16 bg-white">
       <Container>
-        <div className="text-center mb-16">
-          <h2 className="max-w-xl text-3xl md:text-[48px] font-medium mb-6 font-heading mx-auto">
+        <div className="mb-16">
+          <h2 className="max-w-2xl text-3xl md:text-[48px] font-medium mb-6 font-heading">
             Frequently Asked Questions
           </h2>
-          <p className="text-base text-gray-700 max-w-lg mx-auto">
-            Can't find the answer you're looking for? Reach out to our{" "}
-            <a
-              href="#"
-              className="font-semibold text-indigo-600 hover:text-indigo-500"
-            >
-              customer support
-            </a>{" "}
-            team.
+          <p className="text-base text-gray-700 max-w-lg">
+            Have questions about your specific situation? Find answers to the
+            most common questions below.
           </p>
         </div>
 
         <div className="lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="lg:col-span-5">
             <Image
-              src="/image-3.png"
+              src="/image-4.png"
               alt="FAQ illustration"
               width={500}
               height={400}
@@ -75,7 +70,15 @@ const FAQSection = () => {
             <dl className="mt-10 space-y-6">
               <Accordion type="single" collapsible>
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={faq.question} value={`item-${index}`} className={`pt-6 ${index !== faqs.length - 1 ? 'border-b border-gray-300 pb-6' : 'border-none'}`}>
+                  <AccordionItem
+                    key={faq.question}
+                    value={`item-${index}`}
+                    className={`pt-6 ${
+                      index !== faqs.length - 1
+                        ? "border-b border-gray-300 pb-6"
+                        : "border-none"
+                    }`}
+                  >
                     <dt>
                       <AccordionTrigger className="group flex w-full items-start justify-between text-left text-gray-900 hover:no-underline py-0 [&>svg]:hidden">
                         <span className="text-base/7 font-semibold">
@@ -95,7 +98,9 @@ const FAQSection = () => {
                     </dt>
                     <AccordionContent asChild className="pb-0">
                       <dd className="mt-2 pr-12">
-                        <p className="text-base/7 text-gray-600">{faq.answer}</p>
+                        <p className="text-base/7 text-gray-600">
+                          {faq.answer}
+                        </p>
                       </dd>
                     </AccordionContent>
                   </AccordionItem>
