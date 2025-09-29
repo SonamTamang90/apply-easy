@@ -10,7 +10,7 @@ import FAQSection from "@/components/landing/FAQSection";
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-background">
-      <div className="bg-[#F5F5F5]">
+      <div className="">
         <Header />
         <HeroSection />
       </div>

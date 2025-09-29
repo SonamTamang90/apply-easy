@@ -48,14 +48,15 @@ function AvatarGroup() {
 
 export default function HeroSection() {
   return (
-    <section className="w-full min-h-full flex items-center py-14">
+    <section className="w-full min-h-full flex items-center py-14 bg-white">
       <Container className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-14">
           <div className="">
-            <h1 className="text-5xl sm:text-7xl font-heading font-bold text-black mb-6">
-              Get Hired Faster, Smarter
+            <h1 className="text-5xl sm:text-6xl leading-[68px] font-heading font-semibold text-black mb-6">
+              Simplify your <br />
+              <span className="bg-brand/25 px-2">Career</span> search
             </h1>
-            <p className="text-lg text-muted-foreground max-w-xl">
+            <p className="text-base text-muted-foreground max-w-xl">
               Streamline your job search with AI-powered applications. Find,
               apply, and track your dream job opportunities effortlessly.
             </p>
@@ -78,7 +79,7 @@ export default function HeroSection() {
         <div className="relative">
           <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-gray-100">
             <Image
-              src="/hero.png"
+              src="/hero-1.png"
               alt="Professional working on laptop"
               fill
               className="object-cover"

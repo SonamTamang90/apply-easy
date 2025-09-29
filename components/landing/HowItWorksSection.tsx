@@ -35,15 +35,16 @@ export default function HowItWorksSection() {
   const rightSteps = steps.slice(2, 4);
 
   return (
-    <section className="w-full py-16 bg-[#F5F5F5]">
+    <section className="w-full py-16">
       <Container>
-        <div className="text-center mb-16">
-          <h2 className="max-w-xl text-3xl md:text-[48px] font-medium mb-6 font-heading mx-auto">
-            How It Works
+        <div className="mb-16">
+          <h2 className="max-w-xl text-3xl md:text-[44px] font-bold mb-6 font-heading">
+            How it works?
           </h2>
-          <p className="text-base text-gray-700 max-w-lg mx-auto">
-            Transform your job search with our simple four-step process that
-            gets you noticed by employers.
+          <p className="text-base text-gray-700 max-w-lg">
+            Experience our intelligent four-step methodology that transforms
+            your applications and connects you with the right opportunities
+            effortlessly.
           </p>
         </div>
 
