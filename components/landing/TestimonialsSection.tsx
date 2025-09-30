@@ -1,6 +1,8 @@
 import { Card } from "@/components/ui/card";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Container from "../layout/Container";
+import SectionIntro from "./SectionIntro";
+import { FadeIn, FadeInStagger } from "./FadeIn";
 
 const featuredTestimonial = {
   body: "ApplyEasy completely transformed my job search process. The AI-powered cover letter generator helped me craft personalized applications in minutes instead of hours. I landed 3 interviews in my first week using the platform and got my dream job at a tech startup!",
@@ -156,46 +158,42 @@ function classNames(...classes) {
 export default function TestimonialsSection() {
   return (
     <section className="py-16 bg-[#F5F5F5]">
-      <div className="max-w-4xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="max-w-xl text-3xl md:text-[48px] font-medium mb-6 font-heading mx-auto">
-            What Our Users Say
-          </h2>
-          <p className="text-base text-gray-700 max-w-lg mx-auto">
-            Real stories from professionals who transformed their job search
-            with ApplyEasy
-          </p>
-        </div>
-      </div>
+      <SectionIntro title=" What Our Users Say" className="mb-16">
+        Real stories from professionals who transformed their job search with
+        ApplyEasy
+      </SectionIntro>
       <Container>
         <div className="mx-auto mt-16 flow-root max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none">
-          <div className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
-            {testimonials.flat(2).slice(0, 9).map((testimonial) => (
-              <div
-                key={testimonial.author.handle}
-                className="pt-8 sm:inline-block sm:w-full sm:px-4"
-              >
-                <figure className="rounded-2xl bg-gray-50 p-8 text-sm/6">
-                  <blockquote className="text-gray-900">
-                    <p>{`"${testimonial.body}"`}</p>
-                  </blockquote>
-                  <figcaption className="mt-6 flex items-center gap-x-4">
-                    <img
-                      alt=""
-                      src={testimonial.author.imageUrl}
-                      className="size-10 rounded-full bg-gray-50"
-                    />
-                    <div>
-                      <div className="font-semibold text-gray-900">
-                        {testimonial.author.name}
+          <FadeInStagger className="-mt-8 sm:-mx-4 sm:columns-2 sm:text-[0] lg:columns-3">
+            {testimonials
+              .flat(2)
+              .slice(0, 9)
+              .map((testimonial) => (
+                <FadeIn
+                  key={testimonial.author.handle}
+                  className="pt-8 sm:inline-block sm:w-full sm:px-4"
+                >
+                  <figure className="rounded-2xl bg-gray-50 p-8 text-sm/6">
+                    <blockquote className="text-gray-900">
+                      <p>{`"${testimonial.body}"`}</p>
+                    </blockquote>
+                    <figcaption className="mt-6 flex items-center gap-x-4">
+                      <img
+                        alt=""
+                        src={testimonial.author.imageUrl}
+                        className="size-10 rounded-full bg-gray-50"
+                      />
+                      <div>
+                        <div className="font-semibold text-gray-900">
+                          {testimonial.author.name}
+                        </div>
+                        <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
                       </div>
-                      <div className="text-gray-600">{`@${testimonial.author.handle}`}</div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </div>
-            ))}
-          </div>
+                    </figcaption>
+                  </figure>
+                </FadeIn>
+              ))}
+          </FadeInStagger>
         </div>
       </Container>
     </section>

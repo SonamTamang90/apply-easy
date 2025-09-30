@@ -2,6 +2,8 @@
 import { Upload, Sparkles, CheckCircle2, Send } from "lucide-react";
 import Container from "../layout/Container";
 import Image from "next/image";
+import SectionIntro from "./SectionIntro";
+import { FadeIn, FadeInStagger } from "./FadeIn";
 
 const steps = [
   {
@@ -36,47 +38,40 @@ export default function HowItWorksSection() {
 
   return (
     <section className="w-full py-16">
-      <Container>
-        <div className="mb-16">
-          <h2 className="max-w-xl text-3xl md:text-[44px] font-bold mb-6 font-heading">
-            How it works?
-          </h2>
-          <p className="text-base text-gray-700 max-w-lg">
-            Experience our intelligent four-step methodology that transforms
-            your applications and connects you with the right opportunities
-            effortlessly.
-          </p>
-        </div>
+      <SectionIntro title="How it works?" className="mb-24">
+        Experience our intelligent four-step methodology that transforms your
+        applications and connects you with the right opportunities effortlessly.
+      </SectionIntro>
 
+      <Container>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
           {/* Left side - First 2 steps */}
-          <div className="flex flex-col gap-6">
+          <FadeInStagger className="flex flex-col gap-6">
             {leftSteps.map((step, idx) => (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
-              >
-                <div className="flex flex-col space-y-9 items-start space-x-4">
-                  <div className="flex-shrink-0 flex items-center gap-4">
-                    <div className="h-10 w-10 rounded-lg bg-gray-900 text-sm text-white flex items-center justify-center gap-2 font-bold uppercase font-heading">
-                      <span className="text-lg">{idx + 1}</span>
+              <FadeIn key={idx}>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center">
+                  <div className="flex flex-col space-y-6 items-start space-x-4">
+                    <div className="flex-shrink-0 flex items-center gap-4">
+                      <div className="h-10 w-10 rounded-full text-sm text-gray-400/40 flex items-center justify-center gap-2 font-bold uppercase font-heading">
+                        <span className="text-2xl">{idx + 1}</span>
+                      </div>
                     </div>
-                    <h3 className="font-heading font-semibold text-xl">
-                      {step.title}
-                    </h3>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-gray-600 text-base leading-relaxed">
-                      {step.description}
-                    </p>
+                    <div className="flex-1">
+                      <h3 className="font-heading font-medium text-base mb-2">
+                        {step.title}
+                      </h3>
+                      <p className="text-gray-600 text-base leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
             ))}
-          </div>
+          </FadeInStagger>
 
           {/* Center - Image */}
-          <div className="flex justify-center">
+          <FadeIn className="flex justify-center">
             <Image
               src="/image-2.png"
               alt="How it works illustration"
@@ -84,33 +79,32 @@ export default function HowItWorksSection() {
               height={400}
               className="rounded-2xl shadow-lg"
             />
-          </div>
+          </FadeIn>
 
           {/* Right side - Last 2 steps */}
-          <div className="flex flex-col gap-6">
+          <FadeInStagger className="flex flex-col gap-6">
             {rightSteps.map((step, idx) => (
-              <div
-                key={idx + 2}
-                className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center"
-              >
-                <div className="flex flex-col space-y-9 items-start space-x-4">
-                  <div className="flex-shrink-0 flex items-center gap-4">
-                    <div className="h-10 w-10 rounded-lg bg-gray-900 text-sm text-white flex items-center justify-center gap-2 font-bold uppercase font-heading">
-                      <span className="text-lg">{idx + 3}</span>
+              <FadeIn key={idx + 2}>
+                <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 flex-1 flex items-center">
+                  <div className="flex flex-col space-y-9 items-start space-x-4">
+                    <div className="flex-shrink-0 flex items-center gap-4">
+                      <div className="h-10 w-10 rounded-lg bg-gray-900 text-sm text-white flex items-center justify-center gap-2 font-bold uppercase font-heading">
+                        <span className="text-lg">{idx + 3}</span>
+                      </div>
+                      <h3 className="font-heading font-semibold text-xl">
+                        {step.title}
+                      </h3>
                     </div>
-                    <h3 className="font-heading font-semibold text-xl">
-                      {step.title}
-                    </h3>
-                  </div>
-                  <div className="flex-1">
-                    <p className="text-gray-600 text-base leading-relaxed">
-                      {step.description}
-                    </p>
+                    <div className="flex-1">
+                      <p className="text-gray-600 text-base leading-relaxed">
+                        {step.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
             ))}
-          </div>
+          </FadeInStagger>
         </div>
       </Container>
     </section>

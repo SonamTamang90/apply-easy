@@ -3,6 +3,7 @@ import Link from "next/link";
 import Container from "../layout/Container";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { FadeIn, FadeInStagger } from "./FadeIn";
 
 function AvatarGroup() {
   return (
@@ -51,7 +52,7 @@ export default function HeroSection() {
     <section className="w-full min-h-full flex items-center py-14 bg-white">
       <Container className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-14">
-          <div className="">
+          <FadeIn className="">
             <h1 className="text-5xl sm:text-6xl leading-[68px] font-heading font-semibold text-black mb-6">
               Simplify your <br />
               <span className="bg-brand/25 px-2">Career</span> search
@@ -60,20 +61,24 @@ export default function HeroSection() {
               Streamline your job search with AI-powered applications. Find,
               apply, and track your dream job opportunities effortlessly.
             </p>
-          </div>
-          <div className="flex flex-col min-[480px]:flex-row gap-4">
-            <Link href="/sign-up">
-              <Button size="lg" variant="brand">
-                Get Started Free
-              </Button>
-            </Link>
-            <Link href="#how-it-works">
-              <Button variant="outline" size="lg">
-                See How It Works
-              </Button>
-            </Link>
-          </div>
-          <AvatarGroup />
+          </FadeIn>
+          <FadeInStagger className="space-y-8">
+            <FadeIn className="flex flex-col min-[480px]:flex-row gap-4">
+              <Link href="/sign-up">
+                <Button size="lg" variant="brand">
+                  Get Started Free
+                </Button>
+              </Link>
+              <Link href="#how-it-works">
+                <Button variant="outline" size="lg">
+                  See How It Works
+                </Button>
+              </Link>
+            </FadeIn>
+            <FadeIn>
+              <AvatarGroup />
+            </FadeIn>
+          </FadeInStagger>
         </div>
 
         <div className="relative">
