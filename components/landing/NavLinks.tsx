@@ -8,6 +8,18 @@ export const NavLinks = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const timeoutRef = useRef<number | null>(null);
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    // Only handle smooth scroll for anchor links on the same page
+    if (href.startsWith("/#")) {
+      e.preventDefault();
+      const elementId = href.substring(2); // Remove '/#'
+      const element = document.getElementById(elementId);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  };
+
   return (
     <>
       {[
@@ -20,6 +32,7 @@ export const NavLinks = () => {
         <Link
           key={label}
           href={href}
+          onClick={(e) => handleClick(e, href)}
           className="relative -mx-3 -my-2 rounded-lg px-3 py-2 text-sm uppercase text-gray-700 transition-colors delay-150 hover:text-gray-900 hover:delay-0"
           onMouseEnter={() => {
             if (timeoutRef.current) {

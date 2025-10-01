@@ -36,7 +36,7 @@ const features = [
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full py-24 bg-[#F5F5F5]">
+    <section id="features" className="w-full py-24 bg-[#F5F5F5]">
       <SectionIntro
         title="Powerful features to accelerate your career"
         className="mb-16"

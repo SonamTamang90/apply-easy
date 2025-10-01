@@ -54,7 +54,7 @@ const pricingPlans = [
 
 export default function PricingSection() {
   return (
-    <section className="w-full py-16 bg-background">
+    <section id="pricing" className="w-full py-16 bg-background">
       <SectionIntro title="Choose your plan" className="mb-16">
         Start free and upgrade as your career goals evolve. No hidden fees,
         cancel anytime.

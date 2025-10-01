@@ -37,7 +37,7 @@ export default function HowItWorksSection() {
   const rightSteps = steps.slice(2, 4);
 
   return (
-    <section className="w-full py-16">
+    <section id="howitworks" className="w-full py-16">
       <SectionIntro title="How it works?" className="mb-24">
         Experience our intelligent four-step methodology that transforms your
         applications and connects you with the right opportunities effortlessly.

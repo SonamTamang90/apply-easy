@@ -45,7 +45,7 @@ const faqs = [
 
 const FAQSection = () => {
   return (
-    <section className="w-full py-16 bg-white">
+    <section id="faqs" className="w-full py-16 bg-white">
       <SectionIntro title="Frequently Asked Questions" className="mb-16">
         Have questions about your specific situation? Find answers to the most
         common questions below.
