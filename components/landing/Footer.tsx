@@ -1,3 +1,5 @@
+import Container from "../layout/Container";
+
 const navigation = {
   product: [
     { name: "Features", href: "#features" },
@@ -89,7 +91,7 @@ const navigation = {
 export default function Footer() {
   return (
     <footer className="bg-[#F5F5F5]">
-      <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8 lg:py-32">
+      <Container className="py-16 sm:py-24 lg:py-32">
         <div className="mx-auto max-w-2xl text-center">
           <p className="mt-2 text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-heading">
             Your career deserves better
@@ -204,7 +206,7 @@ export default function Footer() {
             &copy; 2024 ApplyEasy, Inc. All rights reserved.
           </p>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

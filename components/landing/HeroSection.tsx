@@ -58,7 +58,7 @@ export default function HeroSection() {
               <span className="bg-brand/25 px-2">Career</span> search
             </h1>
             <p className="text-base text-muted-foreground max-w-xl">
-              Streamline your job search with AI-powered applications. Find,
+              Streamline your career search with AI-powered applications. Find,
               apply, and track your dream job opportunities effortlessly.
             </p>
           </FadeIn>

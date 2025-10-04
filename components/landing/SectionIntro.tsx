@@ -20,7 +20,7 @@ const SectionIntro = ({
 }) => {
   return (
     <Container {...props}>
-      <FadeIn className="max-w-2xl">
+      <FadeIn className="max-w-4xl">
         <h2
           className={clsx(
             "font-heading tracking-tight [text-wrap:balance] mb-6",

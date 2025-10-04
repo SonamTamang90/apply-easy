@@ -21,7 +21,7 @@ const features = [
   {
     icon: "custom",
     customIcon: "/users.svg",
-    title: "Team Collaboration",
+    title: "Tailored Applications",
     description:
       "Generate tailored resumes and cover letters with AI-powered application assistance.",
   },
