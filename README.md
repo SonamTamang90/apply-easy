@@ -8,23 +8,31 @@ ApplyEasy is a modern job application management platform designed to streamline
 
 ## Features
 
-**AI-Powered Application Tools**
+**Landing Page**
+- Modern, responsive design optimized for all devices
+- Clear value proposition and feature showcase
+- Testimonials and social proof section
+- Call-to-action for user onboarding
+
+**Application Features**
+
+*AI-Powered Application Tools*
 - AI cover letter generator - Create tailored cover letters for each position
 - AI resume generator - Build professional resumes optimized for your target roles
 - Intelligent content suggestions based on job requirements
 
-**Application Management**
+*Application Management*
 - Track and manage all your job applications in one place
 - Monitor application status and progress
 - Organize applications with advanced filtering and search
 - Never miss a deadline or follow-up
 
-**Job Discovery**
+*Job Discovery*
 - Smart job recommendations
 - Save and bookmark interesting opportunities
 - Comprehensive job search with advanced filters
 
-**Interview Preparation**
+*Interview Preparation*
 - AI-powered interview practice
 - Role-specific and language-specific interview questions
 - Mock interview sessions with feedback
