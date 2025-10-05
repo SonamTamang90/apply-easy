@@ -5,28 +5,24 @@ import { FadeIn, FadeInStagger } from "./FadeIn";
 
 const features = [
   {
-    icon: "custom",
     customIcon: "/swap.svg",
     title: "Simple Task Management",
     description:
       "Effortlessly discover, save, and organize job opportunities with an intuitive interface.",
   },
   {
-    icon: "custom",
     customIcon: "/calendar.svg",
     title: "Smart Scheduling",
     description:
       "Set application deadlines, follow-up reminders, and automated interview scheduling.",
   },
   {
-    icon: "custom",
     customIcon: "/users.svg",
     title: "Tailored Applications",
     description:
       "Generate tailored resumes and cover letters with AI-powered application assistance.",
   },
   {
-    icon: "custom",
     customIcon: "/activity.svg",
     title: "Progress Analytics",
     description:
@@ -52,17 +48,13 @@ export default function FeaturesSection() {
               <div className="bg-white rounded-2xl overflow-hidden flex items-center p-8 gap-6">
                 <div className="flex-shrink-0">
                   <div className="w-16 h-16 bg-black rounded-full flex items-center justify-center">
-                    {feature.icon === "custom" ? (
-                      <Image
-                        src={feature.customIcon}
-                        alt={feature.title}
-                        width={32}
-                        height={32}
-                        className="w-8 h-8"
-                      />
-                    ) : (
-                      <feature.icon className="w-8 h-8 text-white" />
-                    )}
+                    <Image
+                      src={feature.customIcon}
+                      alt={feature.title}
+                      width={32}
+                      height={32}
+                      className="w-8 h-8"
+                    />
                   </div>
                 </div>
                 <div className="flex-1">
