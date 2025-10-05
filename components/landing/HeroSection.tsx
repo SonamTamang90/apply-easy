@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "../layout/Container";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { FadeIn, FadeInStagger } from "./FadeIn";
+import { FadeIn, FadeInStagger, FadeInImage } from "./FadeIn";
 
 function AvatarGroup() {
   return (
@@ -81,8 +81,8 @@ export default function HeroSection() {
           </FadeInStagger>
         </div>
 
-        <div className="relative">
-          <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-gray-100">
+        <FadeInImage className="relative">
+          <div className="aspect-[4/5] relative rounded-3xl overflow-hidden bg-gray-100">
             <Image
               src="/hero.png"
               alt="Professional working on laptop"
@@ -91,7 +91,7 @@ export default function HeroSection() {
               priority
             />
           </div>
-        </div>
+        </FadeInImage>
       </Container>
     </section>
   );

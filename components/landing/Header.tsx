@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Container from "../layout/Container";
 import { NavLinks } from "./NavLinks";
+import { MobileMenu } from "./MobileMenu";
 
 export default function Header() {
   return (
@@ -17,9 +18,15 @@ export default function Header() {
           <NavLinks />
         </div>
 
-        <Button variant="brand" size="lg" className="hidden md:block">
-          <Link href="/register">GET STARTED</Link>
-        </Button>
+        <div className="flex items-center gap-4">
+          <Button variant="brand" size="lg" className="hidden md:block">
+            <Link href="/register">GET STARTED</Link>
+          </Button>
+
+          <div className="md:hidden">
+            <MobileMenu />
+          </div>
+        </div>
       </header>
     </Container>
   );

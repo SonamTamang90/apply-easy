@@ -63,9 +63,9 @@ export default function HowItWorksSection() {
               <div
                 className={`bg-white rounded-3xl p-1 ${
                   idx === 0
-                    ? "-rotate-2 origin-bottom"
+                    ? "md:-rotate-2 md:origin-bottom"
                     : idx === 2
-                    ? "rotate-2 origin-bottom"
+                    ? "md:rotate-2 md:origin-bottom"
                     : ""
                 }`}
               >

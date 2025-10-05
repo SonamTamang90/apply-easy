@@ -47,3 +47,29 @@ export const FadeInStagger = ({
     </FadeInStaggerContext.Provider>
   );
 };
+
+export const FadeInImage = (
+  props: React.ComponentPropsWithoutRef<typeof motion.div>
+) => {
+  const shouldReduceMotion = useReducedMotion();
+
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        clipPath: shouldReduceMotion ? "inset(0% 0% 0% 0%)" : "inset(0% 0% 80% 0%)",
+      }}
+      whileInView={{
+        opacity: 1,
+        clipPath: "inset(0% 0% 0% 0%)",
+      }}
+      viewport={viewport}
+      transition={{
+        duration: 0.8,
+        ease: "easeOut",
+        delay: 0.3,
+      }}
+      {...props}
+    />
+  );
+};
