@@ -26,7 +26,7 @@ const SectionIntro = ({
             "font-heading tracking-tight [text-wrap:balance] mb-6",
             smaller
               ? "text-2xl font-semibold"
-              : "text-3xl md:text-[44px] font-bold",
+              : "text-3xl md:text-[40px] font-bold",
             invert ? "text-white" : "text-gray-900"
           )}
         >

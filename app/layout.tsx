@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Lora } from "next/font/google";
 import "../styles/globals.css";
-import { ThemeProvider } from "next-themes";
-import React from "react";
-import { AuthProvider } from "@/components/AuthProvider";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -21,9 +18,10 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: {
     default: "Apply Easy - Streamline Your Job Application Process",
-    template: "%s | Apply Easy"
+    template: "%s | Apply Easy",
   },
-  description: "Transform your job search with Apply Easy. Streamline applications, track progress, and land your dream job faster. The ultimate job application management platform for modern professionals.",
+  description:
+    "Transform your job search with Apply Easy. Streamline applications, track progress, and land your dream job faster. The ultimate job application management platform for modern professionals.",
   keywords: [
     "job application tracker",
     "job search platform",
@@ -32,7 +30,7 @@ export const metadata: Metadata = {
     "job hunting tool",
     "employment dashboard",
     "job application organizer",
-    "career development platform"
+    "career development platform",
   ],
   authors: [{ name: "Sonam Tamang" }],
   creator: "Sonam Tamang",
@@ -44,7 +42,8 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Apply Easy - Streamline Your Job Application Process",
-    description: "Transform your job search with Apply Easy. Streamline applications, track progress, and land your dream job faster.",
+    description:
+      "Transform your job search with Apply Easy. Streamline applications, track progress, and land your dream job faster.",
     siteName: "Apply Easy",
     locale: "en_US",
     type: "website",
@@ -52,7 +51,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Apply Easy - Streamline Your Job Application Process",
-    description: "Transform your job search with Apply Easy. Streamline applications, track progress, and land your dream job faster.",
+    description:
+      "Transform your job search with Apply Easy. Streamline applications, track progress, and land your dream job faster.",
   },
   robots: {
     index: true,
@@ -75,7 +75,10 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         <meta name="theme-color" content="#000000" />
         <meta name="color-scheme" content="light dark" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -84,11 +87,7 @@ export default function RootLayout({
         <link rel="manifest" href="/manifest.json" />
       </head>
       <body className={`${inter.variable} ${lora.variable} antialiased`}>
-        <AuthProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-            {children}
-          </ThemeProvider>
-        </AuthProvider>
+        {children}
       </body>
     </html>
   );

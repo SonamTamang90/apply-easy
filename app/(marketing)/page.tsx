@@ -5,6 +5,7 @@ import PricingSection from "@/components/landing/PricingSection";
 import TestimonialsSection from "@/components/landing/TestimonialsSection";
 import FAQSection from "@/components/landing/FAQSection";
 import HowItWorksSection from "@/components/landing/HowItWorksSection";
+import CTASection from "@/components/landing/CTASection";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <PricingSection />
         <TestimonialsSection />
         <FAQSection />
+        <CTASection />
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ export default function HeroSection() {
       <Container className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="space-y-14">
           <FadeIn className="">
-            <h1 className="text-5xl sm:text-6xl leading-[68px] font-heading font-semibold text-black mb-6">
+            <h1 className="text-5xl sm:text-6xl leading-[74px] font-heading font-semibold text-black mb-6">
               Simplify your <br />
               <span className="bg-brand/25 px-2">Career</span> search
             </h1>
@@ -84,7 +84,7 @@ export default function HeroSection() {
         <div className="relative">
           <div className="aspect-[4/5] relative rounded-2xl overflow-hidden bg-gray-100">
             <Image
-              src="/hero-1.png"
+              src="/hero.png"
               alt="Professional working on laptop"
               fill
               className="object-cover"

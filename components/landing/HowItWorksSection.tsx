@@ -50,7 +50,7 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section className="w-full py-16 bg-white">
+    <section className="w-full py-16 bg-white" id="howitworks">
       <SectionIntro title="How it works" className="mb-16">
         Transform your job search journey with our intelligent three-step
         process that streamlines everything from resume optimization to

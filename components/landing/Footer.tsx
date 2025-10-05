@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Container from "../layout/Container";
 
 const navigation = {
@@ -90,9 +91,9 @@ const navigation = {
 
 export default function Footer() {
   return (
-    <footer className="bg-[#F5F5F5]">
-      <Container className="py-16 sm:py-24 lg:py-32">
-        <div className="mx-auto max-w-2xl text-center">
+    <footer>
+      <Container className="pb-16">
+        {/* <div className="mx-auto max-w-2xl text-center">
           <p className="mt-2 text-balance text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl font-heading">
             Your career deserves better
           </p>
@@ -108,10 +109,15 @@ export default function Footer() {
               Get Started Free
             </a>
           </div>
-        </div>
-        <div className="mt-24 border-t border-gray-200 pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
+        </div> */}
+        <div className="pt-12 xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="flex items-center gap-2">
-            <img src="/logo.svg" alt="ApplyEasy Logo" width={32} height={32} />
+            <Image
+              src="/logo.svg"
+              alt="ApplyEasy Logo"
+              width={32}
+              height={32}
+            />
             <span className="font-bold text-xl tracking-tight text-gray-900">
               ApplyEasy
             </span>
@@ -189,7 +195,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-        <div className="mt-12 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
+        <div className="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between">
           <div className="flex gap-x-6 md:order-2">
             {navigation.social.map((item) => (
               <a
