@@ -1,20 +1,7 @@
-import { Card } from "@/components/ui/card";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import Container from "../layout/Container";
 import SectionIntro from "./SectionIntro";
 import { FadeIn, FadeInStagger } from "./FadeIn";
-
-const featuredTestimonial = {
-  body: "ApplyEasy completely transformed my job search process. The AI-powered cover letter generator helped me craft personalized applications in minutes instead of hours. I landed 3 interviews in my first week using the platform and got my dream job at a tech startup!",
-  author: {
-    name: "Sarah Chen",
-    handle: "sarahchen_dev",
-    imageUrl:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-    logoUrl:
-      "https://tailwindui.starxg.com/plus/img/logos/savvycal-logo-gray-900.svg",
-  },
-};
+import Image from "next/image";
 const testimonials = [
   [
     [
@@ -151,10 +138,6 @@ const testimonials = [
   ],
 ];
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 export default function TestimonialsSection() {
   return (
     <section className="py-16 bg-[#F5F5F5]">
@@ -178,9 +161,11 @@ export default function TestimonialsSection() {
                       <p>{`"${testimonial.body}"`}</p>
                     </blockquote>
                     <figcaption className="mt-6 flex items-center gap-x-4">
-                      <img
-                        alt=""
+                      <Image
+                        alt={testimonial.author.name}
                         src={testimonial.author.imageUrl}
+                        width={40}
+                        height={40}
                         className="size-10 rounded-full bg-gray-50"
                       />
                       <div>
