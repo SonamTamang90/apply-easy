@@ -63,7 +63,7 @@ export default function HeroSection() {
             </p>
           </FadeIn>
           <FadeInStagger className="space-y-8">
-            <FadeIn className="flex flex-col min-[480px]:flex-row gap-4">
+            <FadeIn className="flex flex-col min-[430px]:flex-row gap-4">
               <Link href="/sign-up">
                 <Button size="lg" variant="brand">
                   Get Started Free
