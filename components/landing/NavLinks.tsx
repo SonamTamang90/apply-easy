@@ -8,7 +8,10 @@ export const NavLinks = () => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const timeoutRef = useRef<number | null>(null);
 
-  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
     // Handle smooth scroll for anchor links on the same page
     if (href.startsWith("/#")) {
       e.preventDefault();
@@ -25,7 +28,7 @@ export const NavLinks = () => {
 
         window.scrollTo({
           top: offsetPosition,
-          behavior: "smooth"
+          behavior: "smooth",
         });
       }
     }
@@ -34,7 +37,6 @@ export const NavLinks = () => {
   return (
     <>
       {[
-        ["Home", "/"],
         ["Features", "/#features"],
         ["How It Works", "/#howitworks"],
         ["Pricing", "/#pricing"],

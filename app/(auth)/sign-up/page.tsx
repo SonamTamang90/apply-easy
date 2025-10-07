@@ -4,19 +4,40 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import SocialAuth from "@/components/auth/SocialAuth";
 import AuthLayout from "@/components/layout/AuthLayout";
+import Link from "next/link";
 
 const page = () => {
   return (
     <AuthLayout
-      title="Sign in to your account"
+      title="Create your account"
       subtitleLink={{
-        text: "Not a member?",
-        href: "/sign-up",
-        linkText: "Start a 14 day free trial",
+        text: "Already have an account?",
+        href: "/sign-in",
+        linkText: "Sign in",
       }}
     >
       <div>
         <form action="#" method="POST" className="space-y-6">
+          <div>
+            <Label
+              htmlFor="fullName"
+              className="block text-sm/6 font-medium text-gray-900"
+            >
+              Full Name
+            </Label>
+            <div className="mt-2">
+              <Input
+                id="fullName"
+                name="fullName"
+                type="text"
+                required
+                autoComplete="name"
+                placeholder="John Doe"
+                className="focus-visible:border-primary focus-visible:ring-primary/20"
+              />
+            </div>
+          </div>
+
           <div>
             <Label
               htmlFor="email"
@@ -31,6 +52,7 @@ const page = () => {
                 type="email"
                 required
                 autoComplete="email"
+                placeholder="you@example.com"
                 className="focus-visible:border-primary focus-visible:ring-primary/20"
               />
             </div>
@@ -49,31 +71,31 @@ const page = () => {
                 name="password"
                 type="password"
                 required
-                autoComplete="current-password"
+                autoComplete="new-password"
+                placeholder="Min 8 characters"
                 className="focus-visible:border-primary focus-visible:ring-primary/20"
               />
             </div>
           </div>
 
-          <div className="flex items-center justify-between">
-            <div className="flex gap-3 items-center">
-              <Checkbox id="remember-me" name="remember-me" />
-              <Label
-                htmlFor="remember-me"
-                className="block text-sm/6 text-gray-900"
-              >
-                Remember me
-              </Label>
-            </div>
-
-            <div className="text-sm/6">
-              <a
-                href="#"
+          <div className="flex gap-3 items-start">
+            <Checkbox id="terms" name="terms" required className="mt-1" />
+            <Label htmlFor="terms" className="text-sm/6 text-gray-900">
+              I agree to the{" "}
+              <Link
+                href="/terms"
                 className="font-semibold text-gray-950 hover:text-gray-700"
               >
-                Forgot password?
-              </a>
-            </div>
+                Terms of Service
+              </Link>{" "}
+              and{" "}
+              <Link
+                href="/privacy"
+                className="font-semibold text-gray-950 hover:text-gray-700"
+              >
+                Privacy Policy
+              </Link>
+            </Label>
           </div>
 
           <div>
@@ -83,7 +105,7 @@ const page = () => {
               variant="brand"
               className="w-full"
             >
-              Sign in
+              Sign up
             </Button>
           </div>
         </form>
