@@ -84,7 +84,6 @@ export const MobileMenu = () => {
         </div>
         <nav className="flex flex-col space-y-1">
           {[
-            ["Home", "/"],
             ["Features", "/#features"],
             ["How It Works", "/#howitworks"],
             ["Pricing", "/#pricing"],
@@ -130,10 +129,15 @@ export const MobileMenu = () => {
             );
           })}
         </nav>
-        <div className="mt-4 pt-4 border-t border-gray-200">
+        <div className="mt-4 pt-4 border-t border-gray-200 flex flex-col gap-3">
+          <Button variant="ghost" size="lg" className="w-full" asChild>
+            <Link href="/sign-in" onClick={() => setIsOpen(false)}>
+              Sign in
+            </Link>
+          </Button>
           <Button variant="brand" size="lg" className="w-full" asChild>
-            <Link href="/register" onClick={() => setIsOpen(false)}>
-              GET STARTED
+            <Link href="/sign-up" onClick={() => setIsOpen(false)}>
+              Try free
             </Link>
           </Button>
         </div>
