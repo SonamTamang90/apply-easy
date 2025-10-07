@@ -33,7 +33,7 @@ const page = () => {
                 required
                 autoComplete="name"
                 placeholder="John Doe"
-                className="focus-visible:border-primary focus-visible:ring-primary/20"
+                className="focus-visible:border-primary focus-visible:ring-primary/20 placeholder:text-sm"
               />
             </div>
           </div>
@@ -53,7 +53,7 @@ const page = () => {
                 required
                 autoComplete="email"
                 placeholder="you@example.com"
-                className="focus-visible:border-primary focus-visible:ring-primary/20"
+                className="focus-visible:border-primary focus-visible:ring-primary/20 placeholder:text-sm"
               />
             </div>
           </div>
@@ -73,7 +73,7 @@ const page = () => {
                 required
                 autoComplete="new-password"
                 placeholder="Min 8 characters"
-                className="focus-visible:border-primary focus-visible:ring-primary/20"
+                className="focus-visible:border-primary focus-visible:ring-primary/20 placeholder:text-sm"
               />
             </div>
           </div>
