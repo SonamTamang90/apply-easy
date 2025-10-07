@@ -2,50 +2,27 @@ import Image from "next/image";
 import Link from "next/link";
 import Container from "../layout/Container";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { AvatarGroup } from "@/components/ui/avatar-group";
 import { FadeIn, FadeInStagger, FadeInImage } from "./FadeIn";
 
-function AvatarGroup() {
-  return (
-    <div className="flex flex-col items-start gap-3 mt-8">
-      <div className="flex -space-x-2">
-        <Avatar className="w-11 h-11 border-2 border-white">
-          <AvatarImage
-            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
-            alt="User 1"
-          />
-        </Avatar>
-        <Avatar className="w-11 h-11 border-2 border-white">
-          <AvatarImage
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-            alt="User 2"
-          />
-        </Avatar>
-        <Avatar className="w-11 h-11 border-2 border-white">
-          <AvatarImage
-            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face"
-            alt="User 3"
-          />
-        </Avatar>
-        <Avatar className="w-11 h-11 border-2 border-white">
-          <AvatarImage
-            src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face"
-            alt="User 4"
-          />
-        </Avatar>
-        <Avatar className="w-11 h-11 border-2 border-white bg-black text-white">
-          <AvatarFallback className="bg-black text-white text-sm font-medium">
-            100+
-          </AvatarFallback>
-        </Avatar>
-      </div>
-      <div className="text-base text-muted-foreground">
-        <span className="font-medium">100+ job seekers</span> already landed
-        their dream jobs
-      </div>
-    </div>
-  );
-}
+const HERO_USERS = [
+  {
+    src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face",
+    alt: "User 1",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face",
+    alt: "User 2",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face",
+    alt: "User 3",
+  },
+  {
+    src: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face",
+    alt: "User 4",
+  },
+];
 
 export default function HeroSection() {
   return (
@@ -76,7 +53,17 @@ export default function HeroSection() {
               </Link>
             </FadeIn>
             <FadeIn>
-              <AvatarGroup />
+              <AvatarGroup
+                users={HERO_USERS}
+                max={4}
+                countText="100+"
+                description={
+                  <>
+                    <span className="font-medium">100+ job seekers</span> already
+                    landed their dream jobs
+                  </>
+                }
+              />
             </FadeIn>
           </FadeInStagger>
         </div>

@@ -73,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="h-full bg-white">
       <head>
         <meta
           name="viewport"
@@ -86,7 +86,7 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
       </head>
-      <body className={`${inter.variable} ${lora.variable} antialiased`}>
+      <body className={`${inter.variable} ${lora.variable} antialiased h-full`}>
         {children}
       </body>
     </html>
