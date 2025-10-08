@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { FadeIn, FadeInImage } from "@/components/landing/FadeIn";
 
 interface AuthLayoutProps {
   children: React.ReactNode;
@@ -55,18 +58,18 @@ const AuthLayout = ({
             )}
           </div>
 
-          <div className="mt-10">{children}</div>
+          <FadeIn className="mt-10">{children}</FadeIn>
         </div>
       </div>
       <div className="relative hidden w-0 flex-1 lg:flex lg:items-center lg:justify-center lg:p-6">
-        <div className="relative w-full h-full">
+        <FadeInImage className="relative w-full h-full">
           <Image
             alt=""
             src="/auth-bg.png"
             fill
             className="object-cover rounded-3xl"
           />
-        </div>
+        </FadeInImage>
       </div>
     </div>
   );
