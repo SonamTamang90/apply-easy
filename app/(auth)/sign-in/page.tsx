@@ -13,6 +13,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { signInSchema, type SignInFormData } from "@/lib/validations/auth";
 import { useState } from "react";
 import { toast } from "sonner";
+import Link from "next/link";
 
 const SignInPage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -119,12 +120,12 @@ const SignInPage = () => {
             </div>
 
             <div className="text-sm/6">
-              <a
-                href="#"
+              <Link
+                href="/forgot-password"
                 className="font-semibold text-gray-950 hover:text-gray-700"
               >
                 Forgot password?
-              </a>
+              </Link>
             </div>
           </div>
 

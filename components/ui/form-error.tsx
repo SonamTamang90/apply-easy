@@ -19,10 +19,7 @@ export function FormError({ message, className }: FormErrorProps) {
 
   return (
     <p
-      className={cn(
-        "text-sm font-medium text-red-600 mt-1.5",
-        className
-      )}
+      className={cn("text-xs font-medium text-red-700 mt-1.5", className)}
       role="alert"
       aria-live="polite"
     >
