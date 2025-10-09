@@ -17,7 +17,7 @@ const features = [
       "Set application deadlines, follow-up reminders, and automated interview scheduling.",
   },
   {
-    customIcon: "/users.svg",
+    customIcon: "/Paper.svg",
     title: "Tailored Applications",
     description:
       "Generate tailored resumes and cover letters with AI-powered application assistance.",
