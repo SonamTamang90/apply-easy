@@ -76,15 +76,76 @@ npm run start
 
 ```
 apply-easy/
-├── app/                    # Next.js App Router
-│   ├── (marketing)/       # Landing pages
-│   └── globals.css        # Global styles
-├── components/            # Shared UI components
-│   ├── ui/               # shadcn/ui components
-│   └── landing/          # Landing page components
-├── hooks/                # Custom React hooks
-├── lib/                  # Utilities and configurations
-└── public/               # Static assets
+├── app/                           # Next.js App Router (v15)
+│   ├── (auth)/                   # Auth route group
+│   │   ├── sign-in/             # Sign in page
+│   │   ├── sign-up/             # Sign up page
+│   │   ├── forgot-password/     # Password recovery
+│   │   └── reset-password/      # Password reset
+│   ├── (dashboard)/             # Dashboard route group
+│   │   ├── layout.tsx           # Shared dashboard layout with sidebar
+│   │   └── dashboard/           # Main dashboard page
+│   │       ├── page.tsx         # Dashboard content
+│   │       └── data.json        # Dashboard data
+│   ├── (marketing)/             # Marketing route group
+│   │   ├── layout.tsx           # Marketing layout
+│   │   └── page.tsx             # Landing page
+│   └── layout.tsx               # Root layout
+│
+├── components/                   # React components
+│   ├── auth/                    # Authentication components
+│   │   └── SocialAuth.tsx       # Social login buttons
+│   ├── dashboard/               # Dashboard components
+│   │   ├── sidebar/             # Sidebar components
+│   │   │   ├── app-sidebar.tsx  # Main sidebar
+│   │   │   ├── nav-main.tsx     # Main navigation
+│   │   │   ├── nav-documents.tsx
+│   │   │   ├── nav-secondary.tsx
+│   │   │   ├── nav-user.tsx     # User profile section
+│   │   │   └── index.ts         # Barrel exports
+│   │   └── index.ts             # Barrel exports
+│   ├── landing/                 # Landing page components
+│   │   ├── Header.tsx           # Site header
+│   │   ├── HeroSection.tsx      # Hero section
+│   │   ├── FeaturesSection.tsx  # Features showcase
+│   │   ├── HowItWorksSection.tsx
+│   │   ├── TestimonialsSection.tsx
+│   │   ├── PricingSection.tsx   # Pricing plans
+│   │   ├── FAQSection.tsx       # FAQ accordion
+│   │   ├── CTASection.tsx       # Call to action
+│   │   ├── Footer.tsx           # Site footer
+│   │   └── ...                  # Other sections
+│   ├── layout/                  # Layout components
+│   │   ├── Container.tsx        # Container wrapper
+│   │   └── AuthLayout.tsx       # Auth pages layout
+│   └── ui/                      # shadcn/ui components
+│       ├── button.tsx           # Button component
+│       ├── card.tsx             # Card component
+│       ├── form.tsx             # Form components
+│       ├── input.tsx            # Input field
+│       ├── sidebar.tsx          # Sidebar primitives
+│       ├── table.tsx            # Table component
+│       ├── chart.tsx            # Chart components
+│       └── ...                  # Other UI components
+│
+├── hooks/                       # Custom React hooks
+│   └── use-mobile.ts           # Mobile detection hook
+│
+├── lib/                         # Utilities and helpers
+│   ├── utils.ts                # Utility functions
+│   ├── types/                  # Type definitions
+│   └── validations/            # Form validations
+│       └── auth.ts             # Auth validation schemas
+│
+├── types/                       # TypeScript type definitions
+│   └── dashboard.ts            # Dashboard types
+│
+├── styles/                      # Global styles
+│   └── globals.css             # Tailwind & global CSS
+│
+└── public/                      # Static assets
+    ├── assets/                 # Images and media
+    └── icons/                  # Icon files
 ```
 
 ---
