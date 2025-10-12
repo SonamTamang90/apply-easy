@@ -2,23 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import {
-  IconBriefcase,
-  IconCalendar,
-  IconCamera,
-  IconChartBar,
-  IconDashboard,
-  IconDatabase,
-  IconFileAi,
-  IconFileDescription,
-  IconFileText,
-  IconFileWord,
-  IconHelp,
-  IconMicrophone,
-  IconReport,
-  IconSearch,
-  IconSettings,
-} from "@tabler/icons-react";
 
 import { NavDocuments } from "./nav-documents";
 import { NavMain } from "./nav-main";
@@ -39,125 +22,58 @@ const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
+    avatar: "/erica.jpg",
   },
   navMain: [
     {
       title: "Dashboard",
       url: "/dashboard",
-      icon: IconDashboard,
+      iconSrc: "/ category.svg",
+    },
+    {
+      title: "Jobs",
+      url: "/dashboard/jobs",
+      iconSrc: "/work.svg",
+      badge: "New",
     },
     {
       title: "Applications",
       url: "/dashboard/applications",
-      icon: IconBriefcase,
-    },
-    {
-      title: "Job Search",
-      url: "/dashboard/jobs",
-      icon: IconSearch,
-    },
-    {
-      title: "Documents",
-      url: "/dashboard/documents",
-      icon: IconFileText,
+      iconSrc: "/paper-negative.svg",
     },
     {
       title: "Interview Prep",
       url: "/dashboard/interviews",
-      icon: IconMicrophone,
-    },
-    {
-      title: "Calendar",
-      url: "/dashboard/calendar",
-      icon: IconCalendar,
+      iconSrc: "/voice.svg",
     },
     {
       title: "Analytics",
       url: "/dashboard/analytics",
-      icon: IconChartBar,
+      iconSrc: "/icons/activity.svg",
     },
   ],
-  navClouds: [
+  documents: [
     {
-      title: "Capture",
-      icon: IconCamera,
-      isActive: true,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
+      name: "Resumes",
+      url: "/dashboard/documents/resumes",
+      iconSrc: "/paper.svg",
     },
     {
-      title: "Proposal",
-      icon: IconFileDescription,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Prompts",
-      icon: IconFileAi,
-      url: "#",
-      items: [
-        {
-          title: "Active Proposals",
-          url: "#",
-        },
-        {
-          title: "Archived",
-          url: "#",
-        },
-      ],
+      name: "Cover Letters",
+      url: "/dashboard/documents/cover-letters",
+      iconSrc: "/paper.svg",
     },
   ],
   navSecondary: [
     {
       title: "Settings",
-      url: "#",
-      icon: IconSettings,
+      url: "/dashboard/settings",
+      iconSrc: "/setting.svg",
     },
     {
       title: "Get Help",
-      url: "#",
-      icon: IconHelp,
-    },
-    {
-      title: "Search",
-      url: "#",
-      icon: IconSearch,
-    },
-  ],
-  documents: [
-    {
-      name: "Data Library",
-      url: "#",
-      icon: IconDatabase,
-    },
-    {
-      name: "Reports",
-      url: "#",
-      icon: IconReport,
-    },
-    {
-      name: "Word Assistant",
-      url: "#",
-      icon: IconFileWord,
+      url: "/dashboard/help",
+      iconSrc: "/chat.svg",
     },
   ],
 };

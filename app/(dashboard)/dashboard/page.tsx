@@ -1,15 +1,7 @@
-import { ChartAreaInteractive, DataTable, SectionCards } from "@/components/dashboard"
-
-import data from "./data.json"
-
 export default function DashboardPage() {
   return (
-    <>
-      <SectionCards />
-      <div className="px-4 lg:px-6">
-        <ChartAreaInteractive />
-      </div>
-      <DataTable data={data} />
-    </>
-  )
+    <div className="px-6">
+      <h1 className="text-xl font-semibold">Welcome back, Steven</h1>
+    </div>
+  );
 }
