@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useSidebar } from "@/components/ui/sidebar";
+import { ThemeToggle } from "@/components/theme-toggle";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -25,9 +26,10 @@ const getPageTitle = (pathname: string) => {
 };
 
 export function SiteHeader() {
-  const { toggleSidebar } = useSidebar();
+  const { toggleSidebar, state } = useSidebar();
   const pathname = usePathname();
   const pageTitle = getPageTitle(pathname);
+  const isCollapsed = state === "collapsed";
 
   return (
     <header className="flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
@@ -39,7 +41,7 @@ export function SiteHeader() {
           onClick={toggleSidebar}
         >
           <Image
-            src="/arrow-left.svg"
+            src={isCollapsed ? "/icons/arrow-right-circle.svg" : "/icons/arrow-left-circle.svg"}
             alt="Toggle Sidebar"
             width={24}
             height={24}
@@ -52,6 +54,9 @@ export function SiteHeader() {
           className="mx-2 data-[orientation=vertical]:h-4"
         />
         <h1 className="text-base font-medium">{pageTitle}</h1>
+      </div>
+      <div className="flex items-center gap-2 px-4">
+        <ThemeToggle />
       </div>
     </header>
   );
