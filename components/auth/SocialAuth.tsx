@@ -12,7 +12,7 @@ const SocialAuth = () => {
         </div>
       </div>
 
-      <div className="mt-6 grid grid-cols-2 gap-4">
+      <div className="mt-6">
         <Link
           href="#"
           className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 focus-visible:ring-transparent"
@@ -38,7 +38,7 @@ const SocialAuth = () => {
           <span className="text-sm/6 font-semibold">Google</span>
         </Link>
 
-        <Link
+        {/* <Link
           href="#"
           className="flex w-full items-center justify-center gap-3 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 shadow-xs ring-gray-300 ring-inset hover:bg-gray-50 focus-visible:ring-transparent"
         >
@@ -55,7 +55,7 @@ const SocialAuth = () => {
             />
           </svg>
           <span className="text-sm/6 font-semibold">GitHub</span>
-        </Link>
+        </Link> */}
       </div>
     </div>
   );
